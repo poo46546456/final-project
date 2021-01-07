@@ -16,6 +16,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     var restaurant = Restaurant()
 
     
+    
     // MARK: - Table view data source
     func numberOfSections(in tableView: UITableView) -> Int {
         1
@@ -98,6 +99,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             let destinationController = segue.destination as! ReviewViewController
             destinationController.restaurant = restaurant
         }
+        
     }
     
     @IBAction func close(segue: UIStoryboardSegue) {
@@ -113,6 +115,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func near(_ sender: Any) {
+        self.performSegue(withIdentifier: "near", sender: nil)
+    }
+    
     
 
 }

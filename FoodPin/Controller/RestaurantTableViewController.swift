@@ -226,6 +226,7 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
         let topView = destinationController.topViewController as! NewRestaurantController
         topView.addDelegate = self
         }
+        
     }
 
 
