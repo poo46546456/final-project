@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rHh-h5-tBl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cRD-nn-amB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -93,6 +93,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="FoodPin" id="CeX-Et-aed">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="9uS-F7-BLK">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a0P-gU-FHv">
+                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="登出">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutAction:" destination="u6K-Sn-9bi" eventType="touchUpInside" id="eui-sZ-c2e"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="D0M-SB-ngR">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -789,11 +802,76 @@
             </objects>
             <point key="canvasLocation" x="1589.8550724637682" y="-822.32142857142856"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Ymv-S5-KFh">
+            <objects>
+                <viewController id="cRD-nn-amB" customClass="LoginViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RpO-ls-1Qq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="去哪玩？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjf-ry-RlW">
+                                <rect key="frame" x="172" y="236" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="帳號（電子郵件）" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sw8-UG-Xns">
+                                <rect key="frame" x="86" y="358" width="241" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNA-8q-GpA">
+                                <rect key="frame" x="86" y="408" width="241" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEW-yE-Stl">
+                                <rect key="frame" x="87" y="535" width="241" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="登入">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="titleShadowColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAction:" destination="cRD-nn-amB" eventType="touchUpInside" id="TOZ-Ty-dHw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE5-QI-USQ">
+                                <rect key="frame" x="87" y="583" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="註冊">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpAction:" destination="cRD-nn-amB" eventType="touchUpInside" id="aCl-iQ-AY3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EwF-j5-RCB"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailLoginTextField" destination="sw8-UG-Xns" id="adM-Nm-Fmh"/>
+                        <outlet property="passwordLoginTextField" destination="CNA-8q-GpA" id="EDv-3C-LYT"/>
+                        <segue destination="rHh-h5-tBl" kind="presentation" identifier="LoginToRestaurant" modalPresentationStyle="fullScreen" id="6xz-38-zpZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Um3-qQ-Zi2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-607.24637681159425" y="-422.54464285714283"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Evz-ly-Vmd">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rHh-h5-tBl" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Mld-Kn-EWn"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N1h-NH-bQb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

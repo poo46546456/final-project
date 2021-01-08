@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RestaurantTableViewController: UITableViewController, UISearchResultsUpdating {
 
@@ -16,6 +17,16 @@ class RestaurantTableViewController: UITableViewController, UISearchResultsUpdat
     
     var searchResults: [Restaurant] = []
     
+    @IBAction func logoutAction(_ sender: Any) {
+        if Auth.auth().currentUser != nil {
+            do {
+                try Auth.auth().signOut()
+                dismiss(animated: true, completion: nil)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     // MARK: - Table view lifecycle
     
@@ -301,3 +312,5 @@ extension RestaurantTableViewController: AddDataDelegate {
         tableView.insertRows(at: [IndexPath(row: restaurants.count-1, section: 0)], with: .automatic)
     }
 }
+
+
